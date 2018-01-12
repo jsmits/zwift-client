@@ -3,18 +3,18 @@ Zwift Mobile API client
 =======================
 
 
-.. image:: https://img.shields.io/pypi/v/zwift.svg
-        :target: https://pypi.python.org/pypi/zwift
+.. image:: https://img.shields.io/pypi/v/zwift-client.svg
+        :target: https://pypi.python.org/pypi/zwift-client
 
-.. image:: https://img.shields.io/travis/jsmits/zwift.svg
-        :target: https://travis-ci.org/jsmits/zwift
+.. image:: https://img.shields.io/travis/jsmits/zwift-client.svg
+        :target: https://travis-ci.org/jsmits/zwift-client
 
-.. image:: https://readthedocs.org/projects/zwift/badge/?version=latest
-        :target: https://zwift.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/zwift-client/badge/?version=latest
+        :target: https://zwift-client.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/jsmits/zwift/shield.svg
-     :target: https://pyup.io/repos/github/jsmits/zwift/
+.. image:: https://pyup.io/repos/github/jsmits/zwift-client/shield.svg
+     :target: https://pyup.io/repos/github/jsmits/zwift-client/
      :alt: Updates
 
 
@@ -22,7 +22,7 @@ Zwift Mobile API client.
 
 
 * Free software: MIT license
-* Documentation: https://zwift.readthedocs.io.
+* Documentation: https://zwift-client.readthedocs.io.
 
 
 Features
