@@ -12,7 +12,7 @@ To install Zwift Mobile API client, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install zwift
+    $ pip install zwift-client
 
 This is the preferred method to install Zwift Mobile API client, as it will always install the most recent stable release. 
 
