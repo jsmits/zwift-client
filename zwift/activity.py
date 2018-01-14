@@ -17,37 +17,37 @@ class Activity:
         activity_data = self.get_activity(activity_id)
         fit_file_bucket = activity_data['fitFileBucket']
         fit_file_key = activity_data['fitFileKey']
-        raw_fit_data = self.download_fit_file(fit_file_bucket, fit_file_key)
-        records = self.decode_fit_file(raw_fit_data)
-        return self.process_fit_data(records)
+        fit_file_url = 'https://{}.s3.amazonaws.com/{}'.format(
+            fit_file_bucket, fit_file_key)
+        raw_fit_data = download_file(fit_file_url)
+        records = decode_fit_file(raw_fit_data)
+        return process_fit_data(records)
 
     def get_activity(self, activity_id):
         return self.request.json(
             '/api/profiles/{}/activities/{}'.format(
                 self.player_id, activity_id))
 
-    def download_fit_file(self, fit_file_bucket, fit_file_key):
-        url = 'https://{}.s3.amazonaws.com/{}'.format(
-            fit_file_bucket, fit_file_key)
-        return download_file(url)
 
-    def decode_fit_file(self, raw_fit_data):
-        fit_file = FitFile(
-            raw_fit_data, data_processor=StandardUnitsDataProcessor())
-        return [m for m in fit_file.get_messages() if m.name == 'record']
+def decode_fit_file(raw_fit_data):
+    fit_file = FitFile(
+        raw_fit_data, data_processor=StandardUnitsDataProcessor())
+    return [m for m in fit_file.get_messages() if m.name == 'record']
 
-    def process_fit_data(self, records):
-        return [self.parse_fit_record(r) for r in records]
 
-    def parse_fit_record(self, record):
-        return {
-            'time': record.get_value('timestamp'),  # datetime in UTC
-            'lat': record.get_value('position_lat'),  # WGS84
-            'lng': record.get_value('position_long'),  # WGS84
-            'altitude': record.get_value('enhanced_altitude'),  # m
-            'distance': record.get_value('distance'),  # km
-            'speed': record.get_value('enhanced_speed'),  # km/h
-            'power': record.get_value('power'),  # watt
-            'cadence': record.get_value('cadence'),  # rpm
-            'heartrate': record.get_value('heart_rate'),  # bpm
-        }
+def process_fit_data(records):
+    return [parse_fit_record(r) for r in records]
+
+
+def parse_fit_record(record):
+    return {
+        'time': record.get_value('timestamp'),  # datetime in UTC
+        'lat': record.get_value('position_lat'),  # WGS84
+        'lng': record.get_value('position_long'),  # WGS84
+        'altitude': record.get_value('enhanced_altitude'),  # m
+        'distance': record.get_value('distance'),  # km
+        'speed': record.get_value('enhanced_speed'),  # km/h
+        'power': record.get_value('power'),  # watt
+        'cadence': record.get_value('cadence'),  # rpm
+        'heartrate': record.get_value('heart_rate'),  # bpm
+    }
