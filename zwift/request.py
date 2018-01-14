@@ -4,6 +4,14 @@ import requests
 from .error import RequestException
 
 
+def download_file(url):
+    resp = requests.get(url)
+    if not resp.ok:
+        raise RequestException("{} - {}".format(
+            resp.status_code, resp.reason))
+    return resp.content
+
+
 class Request:
     """Class for handling requests."""
     BASE_URL = 'https://us-or-rly101.zwift.com'
