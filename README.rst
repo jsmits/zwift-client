@@ -14,9 +14,7 @@ Zwift Mobile API client
      :alt: Updates
 
 
-Python port of the Zwift Mobile API Javascript client: zwift-mobile-api_.
-
-* Free software: MIT license
+Zwift Mobile API client written in Python. Heavily inspired by zwift-mobile-api_.
 
 
 Installation
