@@ -29,7 +29,7 @@ test_requirements = [
 
 setup(
     name='zwift-client',
-    version='0.1.0',
+    version='0.1.1.dev0',
     description="Zwift Mobile API client.",
     long_description=readme + '\n\n' + history,
     author="Sander Smits",
