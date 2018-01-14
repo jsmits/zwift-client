@@ -14,7 +14,7 @@ class Profile:
     def check__player_id(self):
         """Most /api/profiles endpoints require the real player id."""
         if self.player_id == 'me':
-            profile = self. profile
+            profile = self.profile
             self.player_id = profile['id']
 
     @property
