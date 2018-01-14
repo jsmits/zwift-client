@@ -24,11 +24,15 @@ Python port of the Zwift Mobile API Javascript client: zwift-mobile-api_.
 Installation
 ------------
 
-    >>> pip install zwift-client
+::
+
+    $ pip install zwift-client
 
 
 Usage
 -----
+
+::
 
     # client
     >>> from zwift import Client
