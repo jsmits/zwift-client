@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """The setup script."""
+import zwift
 
 from setuptools import setup, find_packages
+
+version = zwift.__version__
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -19,17 +22,15 @@ requirements = [
 
 setup_requirements = [
     'pytest-runner',
-    # TODO(jsmits): put setup requirements (distutils extensions, etc.) here
 ]
 
 test_requirements = [
     'pytest',
-    # TODO: put package test requirements here
 ]
 
 setup(
     name='zwift-client',
-    version='0.1.1.dev0',
+    version=version,
     description="Zwift Mobile API client.",
     long_description=readme + '\n\n' + history,
     author="Sander Smits",
