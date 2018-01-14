@@ -11,17 +11,26 @@ class Profile:
     def profile(self):
         return self.request.json('/api/profiles/{}'.format(self.player_id))
 
+    def check_player_id(self):
+        """Most /api/profiles endpoints require the real player id."""
+        if self.player_id == 'me':
+            profile = self.profile
+            self.player_id = profile['id']
+
     @property
     def followers(self):
+        self.check_player_id()
         return self.request.json(
             '/api/profiles/{}/followers'.format(self.player_id))
 
     @property
     def followees(self):
+        self.check_player_id()
         return self.request.json(
             '/api/profiles/{}/followees'.format(self.player_id))
 
     def get_activities(self, start=0, limit=10):
+        self.check_player_id()
         return self.request.json(
             '/api/profiles/{}/activities?start={}&limit={}'.format(
                 self.player_id, start, limit))

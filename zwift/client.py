@@ -5,8 +5,7 @@ from .profile import Profile
 from .world import World
 
 
-class ZwiftAccount:
-    """Zwift account."""
+class Client:
     def __init__(self, username, password):
         self.auth_token = AuthToken(username, password)
 
