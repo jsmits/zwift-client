@@ -16,6 +16,7 @@ class World:
         self.world_id = world_id
         self.request = Request(get_access_token)
 
+    @property
     def players(self):
         return self.request.json('/relay/worlds/{}'.format(self.world_id))
 
