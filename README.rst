@@ -34,7 +34,7 @@ Usage
     >>> from zwift import Client
     >>> username = 'your-username'
     >>> password = 'your-password'
-    >>> player_id = your-player-id  # replace with your player_id
+    >>> player_id = your-player-id
     >>> client = Client(username, password)
 
     # profile
