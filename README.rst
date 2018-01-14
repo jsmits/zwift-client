@@ -32,16 +32,24 @@ Installation
 Usage
 -----
 
+
+Client
+++++++
+
 ::
 
-    # client
     >>> from zwift import Client
     >>> username = 'your-username'
     >>> password = 'your-password'
     >>> player_id = your-player-id
     >>> client = Client(username, password)
 
-    # profile
+
+Profile
++++++++
+
+::
+
     >>> profile = client.get_profile()
     >>> profile.profile  # fetch your profile data
     >>> profile.followers
@@ -49,14 +57,24 @@ Usage
     >>> profile.get_activities()  # metadata of your activities
     >>> profile.latest_activity  # metadata of your latest activity
 
-    # activity
+
+Activity
+++++++++
+
+::
+
     >>> activity = client.get_activity(player_id)
     >>> activities = activity.list()  # your activities
     >>> latest_activity_id = activities[0]['id']
     >>> activity.get_activity(latest_activity_id)  # metadata of your latest activity
     >>> activity.get_data(latest_activity_id)  # processed FIT file data
 
-    # world
+
+World
++++++
+
+::
+
     >>> world = client.get_world(1)  # get world with id 1
     >>> world.players  # players currently present in this world
     >>> world.player_status(player_id) # current player status information like speed, cadence, power, etc.
