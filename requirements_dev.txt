@@ -1,9 +1,8 @@
 coverage==4.5.1
 flake8==3.5.0
-pytest==3.3.2
+pytest==3.4.1
 pytest-runner==4.0
 Sphinx==1.6.6
 tox==2.9.1
 watchdog==0.8.3
 zest.releaser[recommended]==6.13.5
-
