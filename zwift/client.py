@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from .activity import Activity
+from .event import Event
 from .auth import AuthToken
 from .profile import Profile
 from .world import World
@@ -11,6 +12,9 @@ class Client:
 
     def get_activity(self, player_id):
         return Activity(player_id, self.auth_token.get_access_token)
+
+    def get_event(self):
+        return Event(self.auth_token.get_access_token)
 
     def get_profile(self, player_id='me'):
         return Profile(player_id, self.auth_token.get_access_token)
