@@ -9,9 +9,9 @@ class Activity:
         self.player_id = player_id
         self.request = Request(get_access_token)
 
-    def list(self):
+    def list(self, start=0, limit=20):
         return self.request.json(
-            '/api/profiles/{}/activities'.format(self.player_id))
+            '/api/profiles/{}/activities/?start={}&limit={}'.format(self.player_id, start, limit))
 
     def get_data(self, activity_id):
         activity_data = self.get_activity(activity_id)
