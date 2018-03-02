@@ -60,7 +60,8 @@ Activity
 ::
 
     >>> activity = client.get_activity(player_id)
-    >>> activities = activity.list()  # your activities
+    >>> activities = activity.list()  # your activities (default start is 0, default limit is 20)
+    >>> activities = activity.list(start=20, limit=50)
     >>> latest_activity_id = activities[0]['id']
     >>> activity.get_activity(latest_activity_id)  # metadata of your latest activity
     >>> activity.get_data(latest_activity_id)  # processed FIT file data

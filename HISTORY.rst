@@ -3,10 +3,10 @@ History
 =======
 
 
-0.1.1 (unreleased)
+0.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add optional ``start`` and ``limit`` keyword arguments to ``Activity.list()``.
 
 
 0.1.0 (2018-01-14)
