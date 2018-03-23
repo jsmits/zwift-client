@@ -13,6 +13,10 @@ Zwift Mobile API client
      :target: https://pyup.io/repos/github/jsmits/zwift-client/
      :alt: Updates
 
+.. image:: https://pyup.io/repos/github/jsmits/zwift-client/python-3-shield.svg
+     :target: https://pyup.io/repos/github/jsmits/zwift-client/
+     :alt: Python 3
+
 
 Zwift Mobile API client written in Python. Heavily inspired by zwift-mobile-api_.
 
