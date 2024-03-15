@@ -1,4 +1,4 @@
-coverage==4.5.1
+coverage==7.4.4
 flake8==3.5.0
 pytest==3.5.0
 Sphinx==1.7.2
